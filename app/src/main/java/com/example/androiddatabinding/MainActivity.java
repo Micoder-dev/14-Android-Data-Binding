@@ -15,6 +15,15 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_main);
         ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
+        activityMainBinding.setMyviewmodel(new MyViewModel());
+
+        activityMainBinding.getMyviewmodel().taskName = "Programming";
+
+        activityMainBinding.setTaskCategory("Business");
+
+        activityMainBinding.txtTaskColor.setText("RED");
+
+        activityMainBinding.setLifecycleOwner(this);
 
     }
 }
