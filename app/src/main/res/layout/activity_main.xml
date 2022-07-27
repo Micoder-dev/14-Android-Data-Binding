@@ -12,6 +12,10 @@
         <variable
             name="taskCategory"
             type="String" />
+
+        <variable
+            name="clickEventHandler"
+            type="com.example.androiddatabinding.MainActivity.ClickEventHandler" />
         
     </data>
 
@@ -47,6 +51,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{clickEventHandler::textViewClick}"
+            android:text="onClickToast"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_task_color" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="onClickCustomToast"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:onClick="@{(v)->clickEventHandler.textViewClickWithParams(v,taskCategory)}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
